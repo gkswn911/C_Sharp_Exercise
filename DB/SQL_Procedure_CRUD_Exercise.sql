@@ -23,7 +23,7 @@ BEGIN
 	SET NOCOUNT OFF
 END;
 
-// ALTER문으로 프로시저 변경.
+// ALTER문으로 프로시저 변경.  -> CREATE문에 덮어써도 됨
 --ALTER PROC CREATE_BOOK(
 --@NAME NVARCHAR(100),   
 --@PUBLISHER NVARCHAR(50),
