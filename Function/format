@@ -1,0 +1,17 @@
+// JavaScript source code
+function format() {
+    var args = Array.prototype.slice.call(arguments, 1);
+    return arguments[0].replace(/\{(\d+)\}/g, function (match, index) {
+        return args[index];
+    });
+}
+
+// Using
+function showUsingFormat() {
+
+    var cnt = 5;
+
+    var msg = format('버튼의 cnt 값은 {0} 입니다.', cnt);
+    alert(msg);
+
+}
