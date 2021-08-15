@@ -15,3 +15,13 @@ function showUsingFormat() {
     alert(msg);
 
 }
+
+// Regular Expreesion
+
+String.prototype.format = function() {
+    var formatted = this, i = 0;
+    while (/%s/.test(formatted))
+    	formatted = formatted.replace("%s", arguments[i++]);
+    return formatted;
+}
+console.log("%s + %s = %s".format(4, 5, 9));
