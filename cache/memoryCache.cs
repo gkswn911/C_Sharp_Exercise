@@ -31,6 +31,8 @@ public JObject GetCache(int bdNo, int bdNum)
                 {
                     // DB의 Procedure에 접근하는 Code 생략.
                   
+                    // key에 대한 캐시값이 존재한다면 Update시켜주고
+                    // 없다면 새롭게 Insert한다.
                     cache.Set(key, caData, new CacheItemPolicy()
                     {   
                         // 우선순위로 제거할 캐시 설정.
