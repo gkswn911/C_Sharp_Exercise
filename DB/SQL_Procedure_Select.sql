@@ -23,3 +23,38 @@ WHERE T.ROWNUM >= ((@VAR1 - 1) * @VAR2 + 1 )
 ORDER BY T.ROWNUM
 
 END;
+
+/****
+게시글의 작성일이 당일이면 h / m / s 까지 출력.
+****/
+
+DECLARE @BD_NO INT
+, @BD_NUM INT
+
+SET @BD_NO = 0;
+SET @BD_NUM = 0;
+
+AS
+BEGIN
+
+SELECT *
+FROM
+	(
+		SELECT TOP (@BD_NUM) *
+		FROM
+			(
+				SELECT PARAM
+					, REG_DT = CONVERT(VARCHAR(10), REG_DT, 120)
+					, CASE 
+						WHEN REG_DT < CONVERT(date,GETDATE()) THEN CONVERT(VARCHAR(10), REG_DT, 120)
+						ELSE CONVERT(CHAR(19), GETDATE(), 20)
+						END AS REG_DT_TO
+					, ROWNUM = ROW_NUMBER() OVER(ORDER BY PARAM DESC)
+				FROM BOARD	
+			) T
+		WHERE T.ROWNUM > (@BD_NO - 1) * @BD_NUM
+			AND T.ROWNUM <= @BD_NO * @BD_NUM
+		ORDER BY T.ROWNUM
+	) A
+WHERE A.ROWNUM = (@BD_NO - 1) * @BD_NUM + (@BOARD_NO + 1)
+END;
