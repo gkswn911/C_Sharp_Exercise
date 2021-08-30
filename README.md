@@ -1,4 +1,4 @@
-# C_Sharp_Exercise With Inflearn C Sharp Lecture!!
+# C_Sharp_Exercise With Inflearn C Sharp Lecture (All) !!
 
 <!-- ### Lec 1   ~   5  -->
 
@@ -10,4 +10,9 @@ https://docs.microsoft.com/ko-kr/aspnet/core/?view=aspnetcore-5.0
 
 ## MSSQL Exercises
 
+Main - TSQL, PROCEDURE CRUD
 https://docs.microsoft.com/ko-kr/sql/ssms/sql-server-management-studio-ssms?view=sql-server-ver15
+
+
+
+
