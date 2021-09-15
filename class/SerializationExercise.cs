@@ -36,7 +36,7 @@ namespace Example
             }
             using(MemoryStream stream = new MemoryStream())
             {
-                // byte를 읽어드린다.
+                // byte를 읽어들인다.
                 stream.Write(data, 0, data.Length);
                 // Stream seek을 맨 처음으로 돌린다.
                 stream.Seek(0, SeekOrigin.Begin);
@@ -48,7 +48,7 @@ namespace Example
             {
                 formatter.Serialize(stream, node);
             }
-            // 파일로 부터 직렬화 데이터를 읽어드린다.
+            // 파일로 부터 직렬화 데이터를 읽어들인다.
             using (FileStream stream = new FileStream("d:\\work\\Serializable.dat", FileMode.Open, FileAccess.Read))
             {
                 // 클래스를 역직렬화 하고 Node클래스의 Print함수 실행.
